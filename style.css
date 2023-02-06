@@ -38,7 +38,6 @@ h2 {
 .flex-column {
     display: flex;
     flex-direction: column;
-    text-align: center;
 }
 
 .flex-center {
@@ -62,10 +61,11 @@ h2 {
     font-size: 2.4rem;
     padding: 2rem 0;
     width: 30rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    text-align: center; 
+    margin-bottom: 0.5rem;
     text-decoration: none;
     color: rgb(28, 26, 26);
     background: linear-gradient(90deg, rgb(0,255,50) 0%, rgb(0,250,100) 50%, rgba(95, 210, 99) 100%);
-    border-radius: 4px;
+    border-radius: 10px;
 }
+
