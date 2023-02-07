@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-
 :root {
     background-color: rgb(29, 29, 26);
 }
@@ -12,10 +11,12 @@
     font-family: 'Nova Square', cursive;
 }
 
+
 h1 {
     color: limegreen;
     margin-bottom: 5rem;
     font-size: 5.4rem;
+    text-align: center;
 }
 
 h2 {
@@ -56,16 +57,3 @@ h2 {
 .hidden {
     display: none;
 }
-
-.btn {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    width: 30rem;
-    text-align: center; 
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-    color: rgb(28, 26, 26);
-    background: linear-gradient(90deg, rgb(0,255,50) 0%, rgb(0,250,100) 50%, rgba(95, 210, 99) 100%);
-    border-radius: 10px;
-}
-
