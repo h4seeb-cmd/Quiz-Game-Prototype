@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good Luck!</title>
+    <title></title>
     <link rel="stylesheet" href="gameStyle.css">
 </head>
 
@@ -15,7 +15,7 @@
         <div id="game" class="class justify-center flex-column">
             <div id="hud">
                 <div class="score">
-                    <p id="score" class="hud prefix">
+                    <p id="score" class="hud-prefix">
                         Question   
                     </p>
                     <div id="scoreBar">
@@ -30,11 +30,24 @@
                         0</h1>
                 </div>
             </div>
-            <div id="question">Answer this question:</div>
+            <h1 id="question">Answer this question:</h1>
             <div class="choiceContainer">
                 <p class="choicePrefix">A</p>
-                <p class="choiceText" dataNumber="1">Choice</p>
+                <p class="choiceText" dataNumber="1">Choice 1</p>
+            </div>              
+            <div class="choiceContainer">
+                <p class="choicePrefix">B</p>
+                <p class="choiceText" dataNumber="2">Choice 2</p>
+            </div>
+            <div class="choiceContainer">
+                <p class="choicePrefix">C</p>
+                <p class="choiceText" dataNumber="3">Choice 3</p>
+            </div>
+            <div class="choiceContainer">
+                <p class="choicePrefix">D</p>
+                <p class="choiceText" dataNumber="4">Choice 4</p>
             </div>
         </div>
     </div>
+    <script src="game.js"></script>
 </body>
