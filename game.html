@@ -10,26 +10,25 @@
 <body class = "flex">
 
     <div class="container">
-        <div id="game" class="class justify-center flex-column">
+        <div class="quiz-container" id="game">
                 <div class="quizHead">
                     <h1 class="quizTitle">Trivia!</h1>
-                    <span id = "score">0</span><span id = "outOf">/</span><span id = questionTotal>10</span>
+                    <div class="quiz-score flex">
+                        <span id = "score">0</span><span id = "outOf">/</span><span id = questionTotal>10</span>
+                    </div>
                 </div>
-        </div>
-        </div> 
+            </div>
             <div class="quiz-body">
                 <h1 class = "quiz-question" id="question"><!-- What do we use for the Linux virtual machine on our laptops?--></h1>
                 <ul class = "quiz-options">
-                    <!-- <li>1: WSL</li>
-                    <li>2: JSON</li>
-                    <li>3: Scratch</li>
-                    <li>4: What's a VM?</li> -->
+                    <!-- <li>1. WSL</li>
+                    <li>2. JSON</li>
+                    <li>3. Scratch</li>
+                    <li>4. What's a VM?</li>  -->
                 </ul>
                 <div id="result">
-                    <!--add result here-->
                 </div>
             </div>
-
             <div class="quiz-foot">
                 <button type = "button" id = "check-answer">Check Answer</button>
                 <button type = "button" id = "play-again">Play Again</button>
@@ -37,9 +36,6 @@
         </div>
     </div>
 
-
-
-
-    <script src="game.js"></script>
+    <script src="game2.js"></script>
 </body>
 </html>

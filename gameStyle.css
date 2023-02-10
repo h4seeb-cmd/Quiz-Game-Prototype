@@ -12,9 +12,8 @@
     font-family: 'Nova Square', cursive;
 }
 
-
 h1 {
-    color: light-green;
+    color: lightgreen;
     margin-bottom: 5rem;
     font-size: 5.4rem;
     text-align: center;
@@ -125,7 +124,7 @@ h2 {
 
 .quiz-options {
     text-align: center;
-    margin: 1rem;
+    margin: 1rem 0;
     list-style-type: none;
     font-size: 2rem;
 }
@@ -137,11 +136,14 @@ h2 {
     cursor: pointer;
     border: 3px solid lightgreen;
     margin: 1rem;
-    box-shadow: 0 2px darkgreen
+    box-shadow: 0 2px darkgreen;
+    background-color: rgb(29, 29, 26);
+    display: block;
 }
 
 .quiz-options li:hover{
-    background-color:green 
+    background-color:green;
+    border-color: lightgreen;
 }
 
 .selected{
@@ -160,7 +162,8 @@ h2 {
     display: block;
     background-color:lightgreen;
     letter-spacing: 1.5px;
-    box-shadow: 0 2px darkgreen
+    box-shadow: 0 2px darkgreen;
+
 }
 
 .quiz-foot button:active{
@@ -168,7 +171,5 @@ h2 {
     color: green;
 }
 
-#play-again{
-    display: none;
-}
+
 
