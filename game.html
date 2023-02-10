@@ -4,50 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Trivia!</title>
     <link rel="stylesheet" href="gameStyle.css">
 </head>
+<body class = "flex">
 
-<h1>Good Luck!</h1>
-
-<body>
     <div class="container">
         <div id="game" class="class justify-center flex-column">
-            <div id="hud">
-                <div class="score">
-                    <p id="score" class="hud-prefix">
-                        Question   
-                    </p>
-                    <div id="scoreBar">
-                        <div id="id" class="scoreBarFull"></div> 
-                    </div>
+                <div class="quizHead">
+                    <h1 class="quizTitle">Trivia!</h1>
+                    <span id = "score">0</span><span id = "outOf">/</span><span id = questionTotal>10</span>
                 </div>
-                <div class="hudItem">
-                    <p class="hud prefix">
-                        Score: 
-                    </p>
-                    <h1 class="hud main text" id = score>
-                        0</h1>
+        </div>
+        </div> 
+            <div class="quiz-body">
+                <h1 class = "quiz-question" id="question"><!-- What do we use for the Linux virtual machine on our laptops?--></h1>
+                <ul class = "quiz-options">
+                    <!-- <li>1: WSL</li>
+                    <li>2: JSON</li>
+                    <li>3: Scratch</li>
+                    <li>4: What's a VM?</li> -->
+                </ul>
+                <div id="result">
+                    <!--add result here-->
                 </div>
             </div>
-            <h1 id="question">Answer this question:</h1>
-            <div class="choiceContainer">
-                <p class="choicePrefix">A</p>
-                <p class="choiceText" dataNumber="1">Choice 1</p>
-            </div>              
-            <div class="choiceContainer">
-                <p class="choicePrefix">B</p>
-                <p class="choiceText" dataNumber="2">Choice 2</p>
-            </div>
-            <div class="choiceContainer">
-                <p class="choicePrefix">C</p>
-                <p class="choiceText" dataNumber="3">Choice 3</p>
-            </div>
-            <div class="choiceContainer">
-                <p class="choicePrefix">D</p>
-                <p class="choiceText" dataNumber="4">Choice 4</p>
+
+            <div class="quiz-foot">
+                <button type = "button" id = "check-answer">Check Answer</button>
+                <button type = "button" id = "play-again">Play Again</button>
             </div>
         </div>
     </div>
+
+
+
+
     <script src="game.js"></script>
 </body>
+</html>

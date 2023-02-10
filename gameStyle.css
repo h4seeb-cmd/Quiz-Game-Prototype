@@ -14,7 +14,7 @@
 
 
 h1 {
-    color: green;
+    color: light-green;
     margin-bottom: 5rem;
     font-size: 5.4rem;
     text-align: center;
@@ -27,22 +27,25 @@ h2 {
 
 #question {
     font-size: 3rem;
+    margin: 2rem;
 }
 
 .choiceContainer {
     display: flex;
-    margin-bottom: 0.8rem;
-    width: 100%;
+    margin-bottom: 0.8rem !important; 
+    width: 50%;
     border-radius: 4px;
     background: limegreen;
     font-size: 3rem;
-    min-width: 80rem
+    min-width: 80rem;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
 }
 
 .choiceContainer:hover {
     cursor: pointer;
     box-shadow: 0 0.4rem 1.4rem 0 rgb(59, 245, 164);
-    transform: scale(1.002);
     transform: transform 100ms;
 }
 
@@ -67,20 +70,49 @@ h2 {
 #hud {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+}
+
+.quizHead {
+    align-items: center;
+    text-align: center;
+}
+
+#score {
+    font-size: 4rem;
+}
+
+#outOf {
+    font-size: 4rem;
+}
+
+#questionTotal {
+    font-size: 4rem;
+}
+
+
+.hudItem {
+    align-content: center;
 }
 
 .hud-prefix {
     text-align: center;
     font-size: 2rem;
+    align-content: center;
 }
 
 .hud-main-text {
-    text-align: center;
+    text-align: center; 
+    align-content: center;
 }
 
 #score {
-    margin-left: 0.5rem;
+    align-content: center;
+    align-items: center;
+    text-align: right;
 }
+
+
 
 #scoreBar {
     width: 20rem;
@@ -91,14 +123,52 @@ h2 {
     overflow: hidden;
 }
 
-#progressBarFull {
-    height: 100%;
-    border: 0.2rem solid lightgreen;
-    width: 0%;
+.quiz-options {
+    text-align: center;
+    margin: 1rem;
+    list-style-type: none;
+    font-size: 2rem;
 }
 
-@media screen and (max-width: 768px) {
-    .choiceContainer{
-        min-width: 40rem;
-    }
+.quiz-options li{
+    border-radius: 1rem;
+    font-weight: bold;
+    padding: .2rem 2rem;
+    cursor: pointer;
+    border: 3px solid lightgreen;
+    margin: 1rem;
+    box-shadow: 0 2px darkgreen
 }
+
+.quiz-options li:hover{
+    background-color:green 
+}
+
+.selected{
+    background-color: green !important;
+}
+
+.quiz-foot button{
+    margin: 0, auto !important;
+    text-align: right;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border-color:green;
+    cursor: pointer;
+    display: block;
+    background-color:lightgreen;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px darkgreen
+}
+
+.quiz-foot button:active{
+    transform: scale(0.95);
+    color: green;
+}
+
+#play-again{
+    display: none;
+}
+
