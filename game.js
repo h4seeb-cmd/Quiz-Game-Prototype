@@ -28,7 +28,8 @@ async function loadQuestion(){
     const APIUrl = 'https://opentdb.com/api.php?amount=1&category=18&difficulty=medium&type=multiple';
     const result = await fetch(`${APIUrl}`); // fetches the data from the API url defined above
     const data = await result.json(); // data here is defined as the jsonified version of result const
-    showQuestion(data.results[0]);
+    _result.innerHTML = "";
+    showQuestion(data.results[0]); 
 }    
 
 // function that displays the question. can be easily modified to single out correct or incorrect answers in the console.
@@ -65,22 +66,45 @@ function selectOption() {
 
 // function that checks the answer
 function checkAnswer() {
-    _checkBtn.disabled = true;
+    _checkBtn.disabled = false;
     if(_options.querySelector('.selected')){
         let selectedAnswer = _options.querySelector('.selected span').textContent;
-        if(selectedAnswer == correctAnswer){
+        if(selectedAnswer.trim() == HTMLDecode(correctAnswer)){
             correctScore ++;
-            _result.innerHTML = '<h2> <i class = "fas fa-check"></i>Correct Answer! </h2>';
+            _result.innerHTML = '<p> <i class = "fas fa-check"></i>Correct Answer! </p>';
         } else {
-            _result.innerHTML = '<h2> <i class = "fas fa-check"></i>Wrong Answer! <b>Correct Answer:</b> ${correctAnswer}</h2>';
+            _result.innerHTML = `<p> <i class = "fas fa-check"></i>Wrong Answer! <b>Correct Answer:</b> ${correctAnswer}</p>`;
         }
+        checkCount();
+    } else {
+        result.innerHTML = '<p> <i class = "fas fa-check"></i>Please Click An Option </p>'
+    }
 }
+
+//conversion of html things to normal text of correct answer
+function HTMLDecode(textString){
+    let doc = new DOMParser().parseFromString(textString, "text/html");
+    return doc.documentElement.textContent;
 }
 
+// function that updates the score
 
+function checkCount(){
+    askedCount++;
+    setCount();
+    if(askedCount == totalQuestion){
+        result.innerHTML = '<p> <i class = "fas fa-check"></i>You Win!</p>'
+    } else {
+        setTimeout(() => {
+            loadQuestion();
+        }, 300);
+    }
+}
 
-
-
+function setCount(){
+    _totalQuestion.textContent = totalQuestion;
+    _correctScore.textContent = correctScore;
+}
 
 
 
