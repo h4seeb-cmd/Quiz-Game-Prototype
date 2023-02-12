@@ -58,7 +58,7 @@ function selectOption() {
 
             }
             option.classList.add('selected');
-        });
+        });  
     });
 
     console.log(correctAnswer);
