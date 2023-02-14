@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function eventListeners(){
     _checkBtn.addEventListener('click', checkAnswer);
+    _restart.addEventListener('click', reset);
 }
 
 
@@ -106,9 +107,14 @@ function setCount(){
     _correctScore.textContent = correctScore;
 }
 
+// function that makes the reset button reload the page
 
+function reset(){
+    location.reload();
+    return false;
+}
 
-
+// timer function??
 
 
 
