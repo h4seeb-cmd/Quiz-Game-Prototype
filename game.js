@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function eventListeners(){
     _checkBtn.addEventListener('click', checkAnswer);
+    _restart.addEventListener('click', reset);
 }
 
 
@@ -29,7 +30,8 @@ async function loadQuestion(){
     const result = await fetch(`${APIUrl}`); // fetches the data from the API url defined above
     const data = await result.json(); // data here is defined as the jsonified version of result const
     _result.innerHTML = "";
-    console.log(data.question)
+    console.log(data.question);
+    console.log(data.correctAnswer);
     // showQuestion(data.results[0]); 
 }    
 
@@ -113,6 +115,13 @@ function reset(){
     location.reload();
     return false;
 }
+
+// timer function??
+
+
+
+
+
 
 
 

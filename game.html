@@ -37,5 +37,32 @@
     </div>
 
     <script src="game.js"></script>
+
+<script>
+    
+function timer(){
+    if (components.timerStart) {
+        // Set interval is a method used to call a function after every delay, in this case we set a delay for 1 second for each execution.  
+        timer = setInterval(function () {
+            m = parseInt(components.rTime / 60, 10)
+            s = parseInt(components.rTime % 60, 10);
+            sMin = m < 10 ? "0" + m : m;
+            sSec = s < 10 ? "0" + s : s;
+            let watch = document.getElementById("time_remaining");
+            watch.innerHTML = sMin + ":" + sSec;
+            if (--components.rTime < 0) {
+                components.rTime = 180;
+                components.revealMines();
+                setTimeout(() => {
+                    alert("YYou are out of time...!");
+                    components.reset();
+                }, 2);
+            }
+        }, 1000)
+    }
+    
+}
+
+</script>
 </body>
 </html>
