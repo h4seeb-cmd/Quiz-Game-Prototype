@@ -25,18 +25,21 @@ function eventListeners(){
 
 // simple function that pulls a question from the api link above.
 async function loadQuestion(){
-    const APIUrl = 'https://opentdb.com/api.php?amount=1&category=18&difficulty=medium&type=multiple';
+    const APIUrl = 'http://172.26.94.81:8086/api/users/';
     const result = await fetch(`${APIUrl}`); // fetches the data from the API url defined above
     const data = await result.json(); // data here is defined as the jsonified version of result const
     _result.innerHTML = "";
-    showQuestion(data.results[0]); 
+    console.log(data.question)
+    // showQuestion(data.results[0]); 
 }    
 
 // function that displays the question. can be easily modified to single out correct or incorrect answers in the console.
 function showQuestion(data){         
-    correctAnswer = data.correct_answer;
-    let incorrectAnswer = data.incorrect_answers;
-    let optionsList = incorrectAnswer;
+    correctAnswer = data.correctAnswer;
+    let incorrectAnswer1 = data.incorrectAnswer1;
+    let incorrectAnswer2 = data.incorrectAnswer2;
+    let incorrectAnswer3 = data.incorrectAnswer3;
+    let optionsList = [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
     optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer); //adds the correct answer to the list of options, then randomizes it's position
     _question.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
     _options.innerHTML = `
@@ -106,14 +109,10 @@ function setCount(){
     _correctScore.textContent = correctScore;
 }
 
-
-
-
-
-
-
-
-
+function reset(){
+    location.reload();
+    return false;
+}
 
 
 
