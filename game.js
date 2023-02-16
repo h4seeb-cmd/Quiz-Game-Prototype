@@ -26,12 +26,15 @@ function eventListeners(){
 
 // simple function that pulls a question from the api link above.
 async function loadQuestion(){
-    const APIUrl = 'http://172.18.129.172:8086/api/users';
+    const APIUrl = 'http://127.0.0.1:8086/api/users/';
     const result = await fetch(`${APIUrl}`); // fetches the data from the API url defined above
     const data = await result.json(); // data here is defined as the jsonified version of result const
     _result.innerHTML = "";
     console.log(data.question);
     console.log(data.correctAnswer);
+    console.log(data.incorrectAnswer1);
+    console.log(data.incorrectAnswer2);
+    console.log(data.incorrectAnswer3);
     // showQuestion(data.results[0]); 
 }    
 
@@ -41,8 +44,8 @@ function showQuestion(data){
     let incorrectAnswer1 = data.incorrectAnswer1;
     let incorrectAnswer2 = data.incorrectAnswer2;
     let incorrectAnswer3 = data.incorrectAnswer3;
-    let optionsList = [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
-    optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer); //adds the correct answer to the list of options, then randomizes it's position
+    let optionsList = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
+    optionsList.splice(Math.floor(Math.random() * (incorrectAnswer1.length + 1)), 0, correctAnswer); //adds the correct answer to the list of options, then randomizes it's position
     _question.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
     _options.innerHTML = `
         ${optionsList.map((option, index) => `

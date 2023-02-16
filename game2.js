@@ -3,7 +3,7 @@ const _question = document.getElementById('question');
 const _options = document.querySelector('.quiz-options');
 const _checkBtn = document.getElementById('check-answer');
 const _playAgainBtn = document.getElementById('play-again');
-const _result = document.getElementById('result');
+const _result = document.getElementById('question');
 const _correctScore = document.getElementById('correct-score');
 const _totalQuestion = document.getElementById('total-question');
 
@@ -15,7 +15,7 @@ async function loadQuestion(){
     const result = await fetch(`${APIUrl}`)
     const data = await result.json();
     _result.innerHTML = "";
-    showQuestion(data.results[0]);
+    showQuestion(data.question);
 }
 
 // event listeners
@@ -35,10 +35,12 @@ document.addEventListener('DOMContentLoaded', function(){
 // display question and options
 function showQuestion(data){
     _checkBtn.disabled = false;
-    correctAnswer = data.correct_answer;
-    let incorrectAnswer = data.incorrect_answers;
-    let optionsList = incorrectAnswer;
-    optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
+    correctAnswer = data.correctAnswer;
+    let incorrectAnswer1 = data.incorrectAnswer1;
+    let incorrectAnswer2 = data.incorrectAnswer2;
+    let incorrectAnswer3 = data.incorrectAnswer3;
+    let optionsList = [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
+//   optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
     // console.log(correctAnswer);
 
     
@@ -108,6 +110,7 @@ function checkCount(){
         }, 300);
     }
 }
+
 
 function setCount(){
     _totalQuestion.textContent = totalQuestion;
