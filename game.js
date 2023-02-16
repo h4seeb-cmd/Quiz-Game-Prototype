@@ -26,7 +26,7 @@ function eventListeners(){
 
 // simple function that pulls a question from the api link above.
 async function loadQuestion(){
-    const APIUrl = 'http://172.26.94.81:8086/api/users/';
+    const APIUrl = 'http://172.18.129.172:8086/api/users';
     const result = await fetch(`${APIUrl}`); // fetches the data from the API url defined above
     const data = await result.json(); // data here is defined as the jsonified version of result const
     _result.innerHTML = "";
