@@ -40,11 +40,12 @@ function showQuestion(data){
     let incorrectAnswer2 = data.incorrectAnswer2;
     let incorrectAnswer3 = data.incorrectAnswer3;
     let optionsList = [incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
+
 //   optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
     // console.log(correctAnswer);
 
     
-    _question.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
+    _question.innerHTML = `${data.question}`;
     _options.innerHTML = `
         ${optionsList.map((option, index) => `
             <li> ${index + 1}. <span>${option}</span> </li>
