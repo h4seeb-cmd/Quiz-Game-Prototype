@@ -70,17 +70,17 @@ function eventListeners(){
 
 // simple function that pulls a question from the api link above.
 async function loadQuestion(){
-    const APIUrl = 'http://172.17.249.142:8086/api/users/';
+    const APIUrl = 'https://nashcsp.duckdns.org/api/trivia/';
     const result = await fetch(`${APIUrl}`); // fetches the data from the API url defined above
     const data = await result.json(); // data here is defined as the jsonified version of result const
     correctAnswer = data.correctAnswer;
-    let incorrectAnswer1 = data.incorrectAnswer1;
-    let incorrectAnswer2 = data.incorrectAnswer2;
-    let incorrectAnswer3 = data.incorrectAnswer3;
+    question = data.question;
+    incorrectAnswer1 = data.incorrectAnswer1;
+    incorrectAnswer2 = data.incorrectAnswer2;
+    incorrectAnswer3 = data.incorrectAnswer3;
     let optionsList = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
     _result.innerHTML = "";
-    console.log(data.question);
-    console.log(data.correctAnswer); 
+    console.log(question);
     console.log(data.incorrectAnswer1);
     console.log(data.incorrectAnswer2);
     console.log(data.incorrectAnswer3);
@@ -90,16 +90,18 @@ async function loadQuestion(){
 
 // function that displays the question. can be easily modified to single out correct or incorrect answers in the console.
 function showQuestion(data){         
-    var correctAnswer = data.correctAnswer;
-    var incorrectAnswer1 = data.incorrectAnswer1;
-    var incorrectAnswer2 = data.incorrectAnswer2;
-    var incorrectAnswer3 = data.incorrectAnswer3;
-    var optionsList = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
+    correctAnswer = correctAnswer;
+    incorrectAnswer1 = incorrectAnswer1;
+    incorrectAnswer2 = incorrectAnswer2;
+    incorrectAnswer3 = incorrectAnswer3;
+    let optionsList = [correctAnswer, incorrectAnswer1, incorrectAnswer2, incorrectAnswer3];
 //    optionsList.splice(Math.floor(Math.random() * (incorrectAnswer1.length + 1)), 0, correctAnswer); //adds the correct answer to the list of options, then randomizes it's position
-    _question.innerHTML = data.question; //<br> <span class = "category"> ${data.category} </span>
+    _question.innerHTML = `${question}`;
+    console.log(optionsList); 
+     //<br> <span class = "category"> ${data.category} </span>
     _options.innerHTML = `
         ${optionsList.map((option, index) => `
-            <li> ${index + 1}. <span>${option}</span> </li> 
+            <li> ${index + 1}. <span> ${option} </span> </li> 
         `).join('')}
     `;
     selectOption(); 
