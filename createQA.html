@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suggest a Question!</title>
     <link rel="stylesheet" href="gameStyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body class = "flex">
 <div class="container"> 
@@ -28,5 +31,38 @@
         <button type="button" id="qCreate"><h3>Suggest</h3></button>
       </form>
 </div>
+<script>
+    $("#qCreate").click(async function() {
+            let correctAnswer = document.getElementById("correctAnswer").value;
+            let incorrectAnswer1 = document.getElementById("incorrectAnswer1").value;
+            let incorrectAnswer2 = document.getElementById("incorrectAnswer2").value;
+            let incorrectAnswer3 = document.getElementById("incorrectAnswer3").value;
+            let question = document.getElementById("question").value;
+            let url = "http://172.28.82.98:4444/api/trivia/create";
+        
+            const headers = {
+                'Content-Type': 'application/json',
+            };
+            const body = JSON.stringify({question: question, correctAnswer: correctAnswer,  incorrectAnswer1: incorrectAnswer1, incorrectAnswer2: incorrectAnswer2, incorrectAnswer3: incorrectAnswer3});
 
+        try {
+            let response = await fetch(url, {
+                mode: 'cors',
+                method: 'POST',
+                headers: headers,
+                body: body
+            });
+            let result = await response.json();
+            console.log('Success:', result);
+        if (result.status == "success"){
+            // do whatever for success
+        } else {
+            // do whatever for failure
+        }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+
+        });
+</script>
 </body>
