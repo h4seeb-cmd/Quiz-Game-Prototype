@@ -14,31 +14,19 @@
     </div>
     <p>Create API</p>
 
-    <form action="javascript:create_qA()">
-        <p><label>
-            Question:
-            <input type="text" name="q" id="q" required="" />
-        </label></p>
-        <p><label>
-            Correct Answer:
-            <input type="text" name="cA" id="cA" required="" />
-        </label></p>
-        <p><label>
-            Incorrect Answer 1:
-            <input type="text" name="iA1" id="iA1" required="" />
-        </label></p>
-        <p><label>
-            Incorrect Answer 2:
-            <input type="text" name="iA2" id="iA2" required="" />
-        </label></p>
-        <p><label>
-            Incorrect Answer 3:
-            <input type="text" name="iA3" id="iA3" required="" />
-        </label></p>
-        <p>
-            <button>Create</button>
-        </p>
-    </form>
+    <form method = "post" id = "createQA">
+        <label for="question">Question</label>
+        <input type="text" id="question" name="question" placeholder="Example Question Here" value=""><br>
+        <label for="correctAnswer">Correct Answer</label>
+        <input type="text" id="correctAnswer" name="correctAnswer" placeholder="Correct Answer Here" value=""><br>
+        <label for="incorrectAnswer1">Incorrect Answer 1</label>
+        <input type="text" id="incorrectAnswer1" name="incorrectAnswer1" placeholder="Incorrect Answer 1" value=""><br>
+        <label for="incorrectAnswer2">Incorrect Answer 2</label>
+        <input type="text" id="incorrectAnswer2" name="incorrectAnswer2" placeholder="Incorrect Answer 2" value=""><br>
+        <label for="incorrectAnswer3">Incorrect Answer 3</label>
+        <input type="text" id="incorrectAnswer3" name="incorrectAnswer3" placeholder="Incorrect Answer 3" value=""><br>
+        <button type="button" id="qCreate"><h3>Suggest</h3></button>
+      </form>
 </div>
 
 </body>
